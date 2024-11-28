@@ -1,0 +1,40 @@
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Projeto...</title>
+</head>
+<body align="center" bgcolor="white">
+    <font color="black">
+    <br>
+    <p>Este Trabalho foi solicitado pelo Professor Nuno Ramos e produzido por Renan Cavalcante no âmbito do projeto do módulo 4 da disciplina de Redes de Comunicação.</p>
+    <img src="LogotipoEscola.png" height="10%">
+    <p>Neste projeto será abordado a franquia de jogos Five Nights at Freddy's, todos os jogos lançados diretamente por Scott Cawthon, colaboração com empresas ou licenciados pelo mesmo.</p>
+    
+    <br>
+
+    <div class="loading-container">
+        <div class="loading-text" id="loadingText">Após 20 segundos você será redirecionado para a página principal...</div>
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        let countdown = 20;
+        const loadingText = document.getElementById('loadingText');
+
+        const interval = setInterval(() => {
+            countdown--;
+            loadingText.textContent = `Após ${countdown} segundos você será redirecionado para a página principal...`;
+            
+            if (countdown <= 0) {
+                clearInterval(interval);
+                window.location.href = 'Home.html';
+            }
+        }, 1000);
+    </script>
+    <p>(Caso não seja redirecionado automaticamente clique <a href="Home.html">aqui</a>)</p>
+    <br>
+    <img src="Loading.gif" height="10%">
+    </font>
+</body>
+</html>
